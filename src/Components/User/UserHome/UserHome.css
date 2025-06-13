@@ -1,0 +1,8 @@
+.dashboard-container {
+  background-image: url('../../../Assets/istockphoto-2196388996-612x612.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 90vh;
+  padding-top: 60px;
+  color: #fff;
+}
