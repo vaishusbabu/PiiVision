@@ -39,3 +39,11 @@
   font-weight: 500;
   padding: 10px 0;
 }
+.register-password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #6c757d;
+}
