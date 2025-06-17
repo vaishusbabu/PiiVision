@@ -6,6 +6,7 @@ import ResetPaasword from "./Components/ResetPassword/ResetPaasword";
 import UserHome from "./Components/User/UserHome/UserHome";
 import AdminHome from "./Components/Admin/AdminHome/AdminHome";
 import ProtectedRoute from "./Components/ProtectedRoute"; 
+import AdminDashboard from "./Components/Admin/AdminDashboard/AdminDashboard";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         <Route path="/reset-password" element={<ResetPaasword />} />
         <Route path="/user-dashboard" element={ <ProtectedRoute role="User"><UserHome /> </ProtectedRoute> }/>
         <Route path="/admin-dashboard" element={<ProtectedRoute role="Admin"><AdminHome /></ProtectedRoute>}/>
+        <Route path="/admin-dashboardM" element={<ProtectedRoute role="Admin"><AdminDashboard /></ProtectedRoute>}/>
+
       </Routes>
     </BrowserRouter>
   );
