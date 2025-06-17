@@ -7,12 +7,15 @@ import { FaEnvelope, FaLock } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 import { jwtDecode } from 'jwt-decode';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 const Login = () => {
   const [form, setForm] = useState({ email: '', password: '' });
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error } = useSelector(state => state.auth);
+  const [showPassword, setShowPassword] = useState(false);
+
 
   const handleChange = e => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -31,7 +34,7 @@ const handleSubmit = async (e) => {
 
    
     if (role?.toLowerCase() === 'admin') {
-      navigate('/admin-dashboard');
+      navigate('/admin-dashboardM');
     } else if (role?.toLowerCase() === 'user') {
       navigate('/user-dashboard');
     } 
@@ -63,18 +66,27 @@ const handleSubmit = async (e) => {
         </div>
 
         <div className="form-group mb-2">
-          <label className="form-label">
-            <FaLock className="me-2" /> Password
-          </label>
-          <input
-            name="password"
-            type="password"
-            className="form-control"
-            placeholder="Enter password"
-            onChange={handleChange}
-            required
-          />
-        </div>
+      <label className="form-label">
+        <FaLock className="me-2" /> Password
+      </label>
+      <div className="position-relative">
+        <input
+          name="password"
+          type={showPassword ? 'text' : 'password'}
+          className="form-control pe-5"
+          placeholder="Enter password"
+          onChange={handleChange}
+          required
+        />
+        <span
+          onClick={() => setShowPassword(!showPassword)}
+          className="login-password-toggle-icon"
+        >
+          {showPassword ? <FaEyeSlash /> : <FaEye />}
+        </span>
+      </div>
+    </div>
+
 
         <div className="d-flex justify-content-between align-items-center mb-4">
           <Link to="/forgot-password" className="text-decoration-none small text-primary">
