@@ -17,8 +17,8 @@ function App() {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPaasword />} />
         <Route path="/user-dashboard" element={ <ProtectedRoute role="User"><UserHome /> </ProtectedRoute> }/>
-        <Route path="/admin-dashboard" element={<ProtectedRoute role="Admin"><AdminHome /></ProtectedRoute>}/>
-        <Route path="/admin-dashboardM" element={<ProtectedRoute role="Admin"><AdminDashboard /></ProtectedRoute>}/>
+        <Route path="/admin-home" element={<ProtectedRoute role="Admin"><AdminHome /></ProtectedRoute>}/>
+        <Route path="/admin-dashboard" element={<ProtectedRoute role="Admin"><AdminDashboard /></ProtectedRoute>}/>
 
       </Routes>
     </BrowserRouter>
